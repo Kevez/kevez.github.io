@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <title>Phaser - States</title>
         <script src="//cdn.jsdelivr.net/phaser/2.5.0/phaser.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
     </head>
     <body>
 
@@ -13,7 +18,7 @@
     <script src="./states/summary.js"></script>
     <script>
         (function () {
-            var game = new Phaser.Game(320, 480, Phaser.CANVAS, 'game');
+            var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'game');
 
             game.state.add('menu', menu);
             game.state.add('play', play);
