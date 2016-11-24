@@ -1,1 +1,26 @@
-Hello github pages.
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <title>Phaser - States</title>
+        <script src="//cdn.jsdelivr.net/phaser/2.5.0/phaser.min.js"></script>
+    </head>
+    <body>
+
+    <script src="./states/menu.js"></script>
+    <script src="./states/play.js"></script>
+    <script src="./states/summary.js"></script>
+    <script>
+        (function () {
+            var game = new Phaser.Game(320, 480, Phaser.CANVAS, 'game');
+
+            game.state.add('menu', menu);
+            game.state.add('play', play);
+            game.state.add('summary', summary);
+
+            game.state.start('menu');
+        })();
+    </script>
+    </body>
+</html>
