@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Dinodopt</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Varela Round';
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+
+        button {
+            width: 100%;
+            background: #9266a7;
+            color: #fff;
+            border: none;
+            padding: 1rem 0;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            background: #9266a7;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 0.5rem;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        footer {
+            background: #619e9a;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        footer a {
+            display: inline-block;
+            width: 25%;
+            float: left;
+            text-decoration: none;
+            text-align: center;
+            padding: 1rem 0;
+            color: #fff;
+        }
+
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app-container">
+    <header>
+        <h1>Dinodopt</h1>
+    </header>
+    <section>
+        <div id="page-home" class="page">
+            <h1>Home</h1>
+            <p>Here is your dinosaur.</p>
+            <p>Look how invisible he is?!</p>
+
+            <table>
+                <tr>
+                    <th colspan="2">
+                        Vitals
+                    </th>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Defence</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="page-train" class="page">
+            <h1>Train</h1>
+            <p>Here you can train your dinosaur to make you more fearsome in battle.</p>
+
+            <button onclick="train(1)">Train strength!</button>
+            <button onclick="train(1)">Train speed!</button>
+            <button onclick="train(1)">Train defence!</button>
+        </div>
+
+        <div id="page-battle" class="page">
+            <h1>Battle</h1>
+            <p>Here you can battle other dinosaurs!</p>
+
+            <button onclick="battle(1)">Battle kyradee86 (Level 5)</button>
+            <button onclick="battle(2)">Battle kevethra (Level 3)</button>
+            <button onclick="battle(3)">Battle filson (Level 1)</button>
+        </div>
+
+        <div id="page-shop" class="page">
+            <h1>Shop</h1>
+            <p>Here you buy upgrades for your dino.</p>
+
+            <button onclick="buySpecialItem(1)">Refill daily trains (5 coins)</button>
+            <button onclick="buySpecialItem(2)">Refill daily battles (10 coins)</button>
+        </div>
+    </section>
+    <footer>
+        <a href="#" onclick="nav('home')">Home</a>
+        <a href="#" onclick="nav('train')">Train</a>
+        <a href="#" onclick="nav('battle')">Battle</a>
+        <a href="#" onclick="nav('shop')">Shop</a>
+    </footer>
+</div>
+<script>
+    function train() {
+        alert('train');
+    }
+
+    function nav(location) {
+        var pageElements = document.getElementsByClassName('page');
+
+        for (var i = 0; i < pageElements.length; i++) {
+            pageElements[i].style.display = 'none';
+        }
+
+        document.getElementById('page-' + location).style.display = 'block';
+    }
+
+    function init() {
+        document.getElementById('page-home').style.display = 'block';
+    }
+
+    init();
+</script>
+</body>
+</html>
